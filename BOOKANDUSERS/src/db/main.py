@@ -1,11 +1,14 @@
+from logging import config
 from sqlmodel import SQLModel
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 
-from src.config import DATABASE_URL
+from src.config import Config
+
+
 
 engine= create_async_engine(
-    DATABASE_URL,
+    Config.DATABASE_URL,
     echo=True
 )
 
